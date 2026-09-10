@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CyberGuard | Password Strength Analyzer</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="grid"></div>
+<header>
+  <div class="brand"><div class="logo">⌬</div><div><b>CYBER<span>GUARD</span></b><small>PASSWORD SECURITY LAB</small></div></div>
+  <div class="status"><i></i> LOCAL ANALYSIS</div>
+</header>
+
+<main>
+  <div class="eyebrow">DECODE LABS • CYBER SECURITY INTERNSHIP • PROJECT 01</div>
+  <h1>Password Strength<br><em>Analyzer</em></h1>
+  <p class="intro">A security-focused password evaluator using validation, character diversity and basic common-password detection.</p>
+
+  <section class="dashboard">
+    <article class="card">
+      <div class="head"><div><small>01 / INPUT</small><h2>Analyze Password</h2></div><strong>▣</strong></div>
+      <label>PASSWORD</label>
+      <div class="input"><input id="password" type="password" placeholder="Enter a test password..." autocomplete="off"><button id="toggle">SHOW</button></div>
+      <div class="meter"><div id="fill"></div></div>
+      <div class="meta"><b id="strength">AWAITING INPUT</b><span id="score">0 / 5 checks</span></div>
+      <button class="run" id="analyze">RUN SECURITY ANALYSIS <span>→</span></button>
+      <div class="privacy">● Passwords are analyzed in memory and are not stored by this project.</div>
+    </article>
+
+    <article class="card">
+      <div class="head"><div><small>02 / ASSESSMENT</small><h2>Security Profile</h2></div><label id="badge">READY</label></div>
+      <div class="profile"><div id="big">—</div><div><b id="title">Enter a password to begin</b><p id="message">Your result will appear here after analysis.</p></div></div>
+      <div class="checks">
+        <div class="check" data-k="length"><i>×</i><b>Minimum length</b><span>8+ characters</span></div>
+        <div class="check" data-k="uppercase"><i>×</i><b>Uppercase</b><span>A–Z</span></div>
+        <div class="check" data-k="lowercase"><i>×</i><b>Lowercase</b><span>a–z</span></div>
+        <div class="check" data-k="number"><i>×</i><b>Number</b><span>0–9</span></div>
+        <div class="check" data-k="symbol"><i>×</i><b>Special symbol</b><span>! @ # $ %</span></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="head"><div><small>03 / RECOMMENDATIONS</small><h2>Security Insights</h2></div><strong>◇</strong></div>
+      <div id="suggestions"><div class="tip">Run an analysis to receive tailored recommendations.</div></div>
+    </article>
+
+    <article class="card">
+      <small>04 / METHODOLOGY</small>
+      <div class="methods">
+        <div><b>01</b>Validate minimum length</div>
+        <div><b>02</b>Inspect character diversity</div>
+        <div><b>03</b>Check common passwords</div>
+        <div><b>04</b>Classify overall strength</div>
+      </div>
+    </article>
+  </section>
+</main>
+<footer><span>DECODE LABS • PROJECT 01</span><span>CYBERSECURITY / SECURITY LOGIC</span></footer>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body></html>
