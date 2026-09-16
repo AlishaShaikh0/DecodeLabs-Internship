@@ -1,0 +1,647 @@
+:root{--navy:#17345f;--text:#294463;--muted:#778aa3;--blue:#2f6df6;--bg:#f5f8fc;--border:#dfe8f2;--green:#10a879;--red:#ef4b5f;--orange:#f59e0b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font:13px "Segoe UI",Arial,sans-serif;color:var(--text)}a{text-decoration:none;color:inherit}button,input,textarea{font:inherit}
+.layout{min-height:100vh}.sidebar{position:fixed;inset:0 auto 0 0;width:238px;background:#fff;border-right:1px solid var(--border);z-index:5}.brand{height:105px;display:flex;align-items:center;gap:11px;padding:20px 22px;border-bottom:1px solid #eef3f7}.logo{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,#2f6df6,#7354ff);color:#fff;display:grid;place-items:center;font-weight:800;font-size:11px}.brand b{display:block;color:var(--navy);font-size:16px}.brand small{display:block;color:#93a3b7;font-size:9px;margin-top:2px}.sidebar nav{padding:17px 12px}.sidebar label{display:block;color:#9aaabd;font-size:8px;font-weight:800;letter-spacing:1px;margin:13px 11px 7px}.sidebar nav a{display:block;padding:10px 12px;border-radius:9px;color:#58708e;font-size:11px;margin:3px 0}.sidebar nav a:hover,.sidebar nav a.active{background:#edf3ff;color:var(--blue);font-weight:700}.side-status{position:absolute;left:14px;right:14px;bottom:18px;background:#effbf7;border:1px solid #c6eddf;border-radius:10px;padding:10px;color:#27876b;font-size:9px}.side-status small{display:block;color:#7c9e94;margin-top:3px}.main{margin-left:238px;min-height:100vh}.main header{height:62px;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 28px;gap:18px;position:sticky;top:0;z-index:4}.main header input{width:430px;height:34px;border:1px solid #d5e1ee;border-radius:8px;padding:0 12px;outline:0;font-size:10px}.online,.pill{font-size:9px;border-radius:20px;padding:7px 10px;background:#effbf7;color:#27876b;border:1px solid #c6eddf;white-space:nowrap}.online{margin-left:auto}.user{border-left:1px solid var(--border);padding-left:17px;color:#fff;background:#eaf1ff;border-radius:50%;width:31px;height:31px;display:grid;place-items:center;font-size:8px;font-weight:800}.user span{display:none}.main main{max-width:1260px;margin:auto;padding:34px 36px}.heading{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:22px}.heading em{font-style:normal;font-weight:800;font-size:8px;letter-spacing:1.1px;color:#7187a4}.heading h1{margin:5px 0 0;color:var(--navy);font-size:27px}.heading p{margin:7px 0;color:var(--muted);font-size:11px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-bottom:15px}.stats>div,.card{background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:0 8px 25px rgba(35,65,105,.06)}.stats>div{padding:16px;min-height:94px}.stats i{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:11px;background:#edf3ff;color:var(--blue);font-style:normal;font-weight:800;float:left;margin-right:12px}.stats span{font-size:8px;color:#8093aa;display:block}.stats b{display:block;color:var(--navy);font-size:20px;margin:3px 0}.stats small{font-size:8px;color:#91a1b4}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:15px}.card{padding:21px}.card h2{font-size:14px;color:var(--navy);margin:0 0 16px}.card h2 small{display:block;color:var(--muted);font-size:9px;font-weight:400;margin-top:4px}.overview{display:flex;align-items:center;justify-content:center;gap:55px;min-height:190px}.donut{width:145px;height:145px;border-radius:50%;background:conic-gradient(var(--red) 0 25%,#f58b0b 25% 75%,#f5b817 75%);display:grid;place-items:center;box-shadow:inset 0 0 0 28px #fff}.donut b,.donut small{grid-area:1/1;text-align:center}.donut b{font-size:28px;color:var(--navy);margin-top:-3px}.donut small{margin-top:45px;font-size:8px;color:var(--muted)}.legend p{font-size:10px;color:#687e98;min-width:150px}.legend b{float:right;color:var(--navy)}.quick{display:flex;align-items:center;gap:11px;border:1px solid #e5edf5;border-radius:9px;padding:11px;margin:9px 0;color:var(--blue)}.quick span{flex:1}.quick b{display:block;font-size:10px;color:var(--navy)}.quick small{display:block;font-size:8px;color:var(--muted);margin-top:3px}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.steps p{display:flex;gap:9px;font-size:9px;color:var(--muted);line-height:1.5}.steps b{color:var(--blue);background:#edf3ff;padding:8px;border-radius:8px;height:max-content}.steps strong{display:block;color:var(--navy);margin-bottom:3px}.analyzer-grid{}.card textarea{width:100%;min-height:360px;border:1px solid #d7e2ed;border-radius:10px;padding:14px;resize:vertical;outline:0;background:#fbfdff;color:var(--text);font-size:11px;line-height:1.6}.card textarea:focus,.urlinput:focus{border-color:#79a4f7;box-shadow:0 0 0 3px #edf3ff}.counter{display:flex;justify-content:space-between;color:#94a4b8;font-size:8px;padding:7px 1px 13px}.buttons{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}.buttons button,.checklist>button{border:1px solid #d6e1ed;background:#eef3f8;color:#5c728d;border-radius:8px;padding:10px 13px;font-size:9px;font-weight:700;cursor:pointer}.buttons .primary,.primary{background:var(--blue);border-color:var(--blue);color:#fff}.result{min-height:480px}.result h2{display:flex;justify-content:space-between}.result h2 span{font-size:7px;background:#f0f3f7;color:#788a9f;border-radius:20px;padding:6px 8px}.empty{text-align:center;padding:100px 20px;color:#91a1b5;font-size:23px}.empty h3{font-size:13px;color:var(--navy);margin:12px 0 4px}.empty p{font-size:9px}.hidden{display:none}.score{display:flex;align-items:center;gap:18px;border-bottom:1px solid #edf2f6;padding-bottom:17px}.score>div:first-child,.smallscore{width:105px;height:105px;border-radius:50%;background:conic-gradient(var(--red) 0deg,#e8eef6 0deg);display:grid;place-items:center;flex:0 0 105px;box-shadow:inset 0 0 0 18px #fff}.score>div:first-child b{font-size:24px;color:var(--navy)}.score h3{margin:4px 0;color:var(--navy);font-size:18px}.score p{margin:0;color:var(--muted);font-size:9px;line-height:1.5}.score em{font-size:7px;font-style:normal;font-weight:800;letter-spacing:1px;color:#7588a2}.meta{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0}.meta div{background:#f7f9fb;border:1px solid #e8eef4;padding:10px;border-radius:8px;font-size:7px;color:#8798aa}.meta b{display:block;color:var(--navy);font-size:10px;margin-top:4px}.sub{font-size:10px!important;margin:15px 0 9px!important}.flagitem{display:flex;gap:8px;background:#fff6f7;border:1px solid #f5dfe3;padding:9px;border-radius:8px;margin:7px 0}.flagitem>i{font-style:normal;background:#ffe6ea;color:var(--red);border-radius:6px;width:23px;height:23px;display:grid;place-items:center;font-weight:800}.flagitem b{font-size:8px;color:var(--navy)}.flagitem p{font-size:8px;color:var(--muted);margin:3px 0;line-height:1.4}.box{background:#f5f7fa;border-radius:8px;padding:11px;margin-top:9px}.box b{font-size:8px;color:var(--navy)}.box p{font-size:8px;color:var(--muted);line-height:1.5;margin:4px 0}.bluebox{background:#edf7ff}.urlinput{width:100%;height:45px;border:1px solid #d7e2ed;border-radius:9px;padding:0 12px;outline:0;font-size:10px}.notice{margin-top:15px;padding:11px;background:#f5f7fa;border-radius:8px;font-size:8px;color:var(--muted);line-height:1.5}.smallscore{background:#edf3ff;color:var(--blue);font-size:22px}.flaggrid,.examples,.tips{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.flag{display:grid;grid-template-columns:38px 1fr auto;gap:12px}.num,.tipnum{width:34px;height:34px;background:#edf3ff;color:var(--blue);display:grid;place-items:center;border-radius:9px;font-size:9px}.flag h2{font-size:12px;margin:0}.flag p{font-size:9px;color:var(--muted);line-height:1.5}.flag>strong{font-size:8px;color:var(--red)}.tags{display:flex;gap:5px;flex-wrap:wrap}.tags span{background:#f1f4f8;border-radius:12px;padding:4px 6px;font-size:7px;color:#71849c}.examples{grid-template-columns:repeat(3,1fr)}.examples pre{height:205px;overflow:auto;white-space:pre-wrap;background:#f7f9fc;border:1px solid #e7edf4;border-radius:8px;padding:10px;font:8px/1.5 Consolas,monospace;color:#657993}.full{width:100%}.checklist{max-width:850px;margin:auto}.intro{display:flex;gap:12px;background:#edf4ff;color:var(--blue);padding:14px;border-radius:10px;margin-bottom:10px;font-size:22px}.intro b{display:block;font-size:11px;color:var(--navy)}.intro small{display:block;font-size:8px;color:var(--muted);margin-top:3px}.checklist label{display:flex;gap:10px;padding:13px 3px;border-bottom:1px solid #edf2f6}.checklist input{accent-color:var(--blue)}.checklist label b{font-size:9px;color:var(--navy);display:block}.checklist label small{font-size:8px;color:var(--muted)}.checklist>button{margin-top:15px}.checklist>p{display:inline;margin-left:10px;font-size:8px;color:var(--muted)}.tips{grid-template-columns:repeat(3,1fr)}.tipnum{margin-bottom:12px;background:#f0ecff;color:#7253ee}.tips h2{font-size:12px;color:var(--navy)}.tips p{font-size:9px;line-height:1.6;color:var(--muted)}.golden{margin-top:15px;background:linear-gradient(110deg,#eef5ff,#f8f1ff)}.golden em{font-size:8px;color:#7085a1;font-style:normal;font-weight:800;letter-spacing:1px}.golden h2{font-size:17px;margin:6px 0}.golden p{font-size:9px;color:var(--muted)}footer{border-top:1px solid var(--border);background:#fff;padding:14px 36px;color:#9aaabd;font-size:8px}footer span{float:right}#menu{display:none}
+@media(max-width:1050px){.stats{grid-template-columns:repeat(2,1fr)}.steps,.tips{grid-template-columns:repeat(2,1fr)}.examples{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}}
+@media(max-width:760px){.sidebar{transform:translateX(-100%);transition:.2s}.sidebar.open{transform:translateX(0)}.main{margin-left:0}.main header{padding:0 13px}.main header input{width:auto;flex:1}.online{display:none}#menu{display:block;border:0;background:none;font-size:19px}.main main{padding:22px 14px}.heading{flex-direction:column;align-items:flex-start}.stats,.flaggrid,.tips{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.overview{gap:20px}.footer{padding:13px 14px}.footer span{float:none;display:block;margin-top:3px}}
+
+/* ================================
+   READABILITY IMPROVEMENTS
+   ================================ */
+
+/* Main body text */
+body {
+    color: #334e68;
+    font-size: 14px;
+}
+
+/* Sidebar */
+.sidebar nav a {
+    color: #3f5875;
+    font-size: 12px;
+}
+
+.sidebar label {
+    color: #71849b;
+    font-size: 9px;
+}
+
+.brand b {
+    color: #17345f;
+    font-size: 17px;
+}
+
+.brand small {
+    color: #71849b;
+    font-size: 10px;
+}
+
+/* Header */
+.main header input {
+    color: #334e68;
+    font-size: 11px;
+}
+
+.main header input::placeholder {
+    color: #8495a9;
+}
+
+/* Page headings */
+.heading em {
+    color: #5d7491;
+    font-size: 9px;
+}
+
+.heading h1 {
+    color: #102f57;
+    font-size: 29px;
+    font-weight: 700;
+}
+
+.heading p {
+    color: #526b86;
+    font-size: 12px;
+}
+
+/* Cards */
+.card h2 {
+    color: #17345f;
+    font-size: 15px;
+}
+
+.card h2 small {
+    color: #647b95;
+    font-size: 10px;
+}
+
+/* Dashboard statistics */
+.stats span {
+    color: #627a96;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.stats b {
+    color: #102f57;
+    font-size: 21px;
+}
+
+.stats small {
+    color: #607993;
+    font-size: 9px;
+}
+
+/* Quick analysis */
+.quick b {
+    color: #17345f;
+    font-size: 11px;
+}
+
+.quick small {
+    color: #627993;
+    font-size: 9px;
+}
+
+/* Dashboard steps */
+.steps p {
+    color: #5d7590;
+    font-size: 10px;
+}
+
+.steps strong {
+    color: #17345f;
+}
+
+/* Text areas */
+.card textarea {
+    color: #294463;
+    font-size: 12px;
+}
+
+.card textarea::placeholder {
+    color: #8a9bad;
+}
+
+/* Character counter */
+.counter {
+    color: #657c96;
+    font-size: 9px;
+}
+
+/* Buttons */
+.buttons button,
+.checklist > button {
+    font-size: 10px;
+}
+
+/* Analyzer result */
+.result h2 span {
+    color: #60758e;
+    font-size: 8px;
+}
+
+.empty {
+    color: #71869e;
+}
+
+.empty h3 {
+    color: #17345f;
+    font-size: 14px;
+}
+
+.empty p {
+    color: #627993;
+    font-size: 10px;
+}
+
+.score h3 {
+    color: #17345f;
+    font-size: 19px;
+}
+
+.score p {
+    color: #5d7590;
+    font-size: 10px;
+}
+
+.score em {
+    color: #637993;
+    font-size: 8px;
+}
+
+.meta div {
+    color: #687e98;
+    font-size: 8px;
+}
+
+.meta b {
+    color: #17345f;
+    font-size: 11px;
+}
+
+/* Red flags */
+.flagitem {
+    background: #fff8f9;
+}
+
+.flagitem b {
+    color: #17345f;
+    font-size: 9px;
+}
+
+.flagitem p {
+    color: #5d7590;
+    font-size: 9px;
+}
+
+/* Explanation / recommendation boxes */
+.box b {
+    color: #17345f;
+    font-size: 9px;
+}
+
+.box p {
+    color: #526b86;
+    font-size: 9px;
+}
+
+/* Red Flag page */
+.flag h2 {
+    color: #17345f;
+    font-size: 13px;
+}
+
+.flag p {
+    color: #5d7590;
+    font-size: 10px;
+}
+
+.tags span {
+    color: #607893;
+    font-size: 8px;
+}
+
+/* Examples */
+.examples pre {
+    color: #405b77;
+    font-size: 9px;
+}
+
+/* Checklist */
+.intro b {
+    color: #17345f;
+    font-size: 12px;
+}
+
+.intro small {
+    color: #5d7590;
+    font-size: 9px;
+}
+
+.checklist label b {
+    color: #17345f;
+    font-size: 10px;
+}
+
+.checklist label small {
+    color: #5d7590;
+    font-size: 9px;
+}
+
+.checklist > p {
+    color: #5d7590;
+    font-size: 9px;
+}
+
+/* Safety tips */
+.tips h2 {
+    color: #17345f;
+    font-size: 13px;
+}
+
+.tips p {
+    color: #526b86;
+    font-size: 10px;
+}
+
+/* Footer */
+footer {
+    color: #657c96;
+    font-size: 9px;
+}
+/* =========================================
+   FINAL READABILITY UPGRADE
+   ========================================= */
+
+body {
+    color: #263b53;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Sidebar */
+.sidebar nav a {
+    color: #304b68;
+    font-size: 14px;
+    padding: 11px 12px;
+}
+
+.sidebar label {
+    color: #526b84;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.brand b {
+    font-size: 18px;
+}
+
+.brand small {
+    color: #526b84;
+    font-size: 11px;
+}
+
+.side-status b {
+    font-size: 12px;
+}
+
+.side-status small {
+    color: #526b84;
+    font-size: 11px;
+}
+
+/* Top header */
+.main header input {
+    color: #263b53;
+    font-size: 13px;
+}
+
+.main header input::placeholder {
+    color: #61758b;
+}
+
+.online {
+    font-size: 11px;
+}
+
+.user {
+    font-size: 12px;
+}
+
+.user span {
+    color: #304b68;
+    font-size: 12px;
+}
+
+.user small {
+    color: #526b84;
+    font-size: 10px;
+}
+
+/* Main headings */
+.heading em {
+    color: #405a75;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.heading h1 {
+    color: #102f57;
+    font-size: 32px;
+    line-height: 1.25;
+}
+
+.heading p {
+    color: #405a75;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.pill {
+    font-size: 11px;
+}
+
+/* Cards */
+.card h2 {
+    color: #17345f;
+    font-size: 18px;
+}
+
+.card h2 small {
+    color: #526b84;
+    font-size: 12px;
+}
+
+.card p {
+    color: #405a75;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Dashboard statistics */
+.stats span {
+    color: #526b84;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.stats b {
+    color: #102f57;
+    font-size: 25px;
+}
+
+.stats small {
+    color: #526b84;
+    font-size: 11px;
+}
+
+/* Quick analysis */
+.quick b {
+    color: #17345f;
+    font-size: 13px;
+}
+
+.quick small {
+    color: #526b84;
+    font-size: 11px;
+}
+
+/* Dashboard steps */
+.steps p {
+    color: #405a75;
+    font-size: 12px;
+}
+
+.steps strong {
+    color: #17345f;
+    font-size: 13px;
+}
+
+/* Text area */
+.card textarea {
+    color: #294463;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.card textarea::placeholder {
+    color: #71849a;
+}
+
+/* Character counter */
+.counter {
+    color: #526b84;
+    font-size: 11px;
+}
+
+/* Buttons */
+.buttons button,
+.checklist > button {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* Analyzer result */
+.result h2 span {
+    color: #526b84;
+    font-size: 10px;
+}
+
+.empty {
+    color: #526b84;
+}
+
+.empty h3 {
+    color: #17345f;
+    font-size: 17px;
+}
+
+.empty p {
+    color: #526b84;
+    font-size: 12px;
+}
+
+.score h3 {
+    color: #17345f;
+    font-size: 22px;
+}
+
+.score p {
+    color: #405a75;
+    font-size: 12px;
+}
+
+.score em {
+    color: #526b84;
+    font-size: 10px;
+}
+
+.meta div {
+    color: #526b84;
+    font-size: 10px;
+}
+
+.meta b {
+    color: #17345f;
+    font-size: 13px;
+}
+
+/* Red flag items */
+.flagitem b {
+    color: #17345f;
+    font-size: 12px;
+}
+
+.flagitem p {
+    color: #405a75;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+/* Explanation / recommendation */
+.box b {
+    color: #17345f;
+    font-size: 12px;
+}
+
+.box p {
+    color: #405a75;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* Red Flags page */
+.flag h2 {
+    color: #17345f;
+    font-size: 16px;
+}
+
+.flag p {
+    color: #405a75;
+    font-size: 12px;
+}
+
+.tags span {
+    color: #526b84;
+    font-size: 10px;
+}
+
+/* Phishing Examples */
+.examples pre {
+    color: #304b68;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* Checklist */
+.intro b {
+    color: #17345f;
+    font-size: 15px;
+}
+
+.intro small {
+    color: #405a75;
+    font-size: 11px;
+}
+
+.checklist label b {
+    color: #17345f;
+    font-size: 13px;
+}
+
+.checklist label small {
+    color: #405a75;
+    font-size: 11px;
+}
+
+.checklist > p {
+    color: #405a75;
+    font-size: 11px;
+}
+
+/* Safety Tips */
+.tips h2 {
+    color: #17345f;
+    font-size: 16px;
+}
+
+.tips p {
+    color: #405a75;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.golden p {
+    color: #405a75;
+    font-size: 12px;
+}
+
+/* Footer */
+footer {
+    color: #526b84;
+    font-size: 11px;
+}
+/* =========================================
+   RISK SCORE CIRCLE FIX
+   ========================================= */
+
+.score {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+#ring {
+    width: 110px !important;
+    height: 110px !important;
+    min-width: 110px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-shrink: 0;
+}
+
+/* Inner circle keeps the score centered */
+#ring::after {
+    content: "";
+    position: absolute;
+    width: 82px;
+    height: 82px;
+    background: white;
+    border-radius: 50%;
+}
+
+#ring b,
+#ring small {
+    position: relative;
+    z-index: 2;
+}
+
+#ring b {
+    font-size: 25px;
+    line-height: 1;
+    color: #17345f;
+}
+
+#ring small {
+    font-size: 11px;
+    color: #526b84;
+    margin-left: 2px;
+}
+
+/* URL scanner score */
+.smallscore {
+    width: 85px !important;
+    height: 85px !important;
+    min-width: 85px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.smallscore b {
+    font-size: 24px;
+}

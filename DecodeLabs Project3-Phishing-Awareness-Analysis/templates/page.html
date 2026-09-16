@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PhishGuard · {{ page|replace("-", " ")|title }}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+  <a class="brand" href="/"><span class="logo">PG</span><span><b>PhishGuard</b><small>Security Analyzer</small></span></a>
+  <nav>
+    <label>OVERVIEW</label><a class="{{'active' if page=='dashboard'}}" href="/">⌂ Dashboard</a>
+    <label>ANALYSIS</label><a class="{{'active' if page=='analyzer'}}" href="/analyzer">◉ Message Analyzer</a><a class="{{'active' if page=='url-scanner'}}" href="/url-scanner">↗ URL Scanner</a>
+    <label>THREAT INTELLIGENCE</label><a class="{{'active' if page=='red-flags'}}" href="/red-flags">! Red Flags</a><a class="{{'active' if page=='examples'}}" href="/examples">▣ Phishing Examples</a>
+    <label>AWARENESS</label><a class="{{'active' if page=='checklist'}}" href="/checklist">✓ Security Checklist</a><a class="{{'active' if page=='safety-tips'}}" href="/safety-tips">● Safety Tips</a>
+  </nav>
+  <div class="side-status"><b>● System Active</b><small>Protection engine ready</small></div>
+</aside>
+
+<div class="main">
+<header><button id="menu">☰</button><input id="search" placeholder="Search threats, keywords, or URLs..."><span class="online">● Security Engine Online</span><div class="user">SA <span>Security Analyst<small>Threat Detection</small></span></div></header>
+
+<main>
+{% if page=="dashboard" %}
+<section class="heading"><div><em>SECURITY OVERVIEW</em><h1>Phishing Awareness Dashboard</h1><p>Monitor suspicious communication and learn how to recognize phishing attempts.</p></div><span class="pill">● Threat Monitoring Active</span></section>
+<div class="stats"><div><i>✉</i><span>MESSAGES ANALYZED</span><b>24</b><small>Awareness checks</small></div><div><i>!</i><span>THREATS DETECTED</span><b>08</b><small>Require attention</small></div><div><i>↗</i><span>URLS SCANNED</span><b>17</b><small>Suspicious links found</small></div><div><i>✓</i><span>SYSTEM STATUS</span><b>ACTIVE</b><small>Protection engine ready</small></div></div>
+<div class="grid2"><section class="card"><h2>Threat Overview <small>Current awareness activity</small></h2><div class="overview"><div class="donut"><b>08</b><small>Threats</small></div><div class="legend"><p>🔴 Critical <b>2</b></p><p>🟠 High <b>4</b></p><p>🟡 Suspicious <b>2</b></p><p>🟢 Low <b>0</b></p></div></div></section>
+<section class="card"><h2>Quick Analysis <small>Start a security check</small></h2><a class="quick" href="/analyzer">⌕ <span><b>Analyze Message</b><small>Detect phishing indicators</small></span>→</a><a class="quick" href="/url-scanner">↗ <span><b>Scan URL</b><small>Inspect suspicious links</small></span>→</a><a class="quick" href="/checklist">✓ <span><b>Run Checklist</b><small>Verify a message safely</small></span>→</a></section></div>
+<section class="card"><h2>How to Use PhishGuard <small>A simple defensive workflow</small></h2><div class="steps"><p><b>01</b><span><strong>Paste</strong> Paste a suspicious message.</span></p><p><b>02</b><span><strong>Analyze</strong> Review the score and red flags.</span></p><p><b>03</b><span><strong>Verify</strong> Use an official channel.</span></p><p><b>04</b><span><strong>Report</strong> Report suspicious messages.</span></p></div></section>
+
+{% elif page=="analyzer" %}
+<section class="heading"><div><em>MESSAGE ANALYSIS</em><h1>Phishing Message Analyzer</h1><p>Paste an email, SMS, or social message and review its warning signs.</p></div><span class="pill">Rule-based analysis</span></section>
+<div class="grid2"><section class="card"><h2>Message Input <small>Text is checked by transparent rules.</small></h2><textarea id="message" maxlength="10000" placeholder="Paste a suspicious email, SMS, or message here..."></textarea><div class="counter"><span id="count">0 characters</span><span>Maximum 10,000</span></div><div class="buttons"><button id="clear">Clear</button><button id="example">Try Example</button><button class="primary" id="analyze">Analyze Message →</button></div></section>
+<section class="card result"><h2>Analysis Result <span id="status">NOT ANALYZED</span></h2><div id="empty" class="empty">🛡<h3>No analysis yet</h3><p>Enter a message and click Analyze Message.</p></div><div id="result" class="hidden"><div class="score"><div id="ring"><b id="score">0</b><small>/100</small></div><div><em>RISK ASSESSMENT</em><h3 id="level"></h3><p id="summary"></p></div></div><div class="meta"><div>MESSAGE TYPE<b id="type"></b></div><div>RED FLAGS<b id="flagCount"></b></div></div><h3 class="sub">⚠ Detected Red Flags</h3><div id="flags"></div><div class="box"><b>Why may this be unsafe?</b><p id="explain"></p></div><div class="box bluebox"><b>Recommended Action</b><p id="action"></p></div></div></section></div>
+
+{% elif page=="url-scanner" %}
+<section class="heading"><div><em>URL ANALYSIS</em><h1>Suspicious URL Scanner</h1><p>Inspect a link's structure without visiting it.</p></div><span class="pill">Safe text inspection</span></section>
+<div class="grid2"><section class="card"><h2>Enter URL <small>Paste the complete link below.</small></h2><input class="urlinput" id="url" placeholder="https://example.com/login"><div class="buttons"><button id="urlExample">Try Example</button><button class="primary" id="scan">Scan URL →</button></div><div class="notice">PhishGuard never opens submitted URLs. It only examines URL text and structure.</div></section><section class="card result"><h2>Scan Result <span id="urlStatus">NOT SCANNED</span></h2><div id="urlEmpty" class="empty">🔗<h3>No URL scanned</h3><p>Enter a URL to see its risk assessment.</p></div><div id="urlResult" class="hidden"><div class="score"><div class="smallscore"><b id="urlScore">0</b></div><div><em>RISK LEVEL</em><h3 id="urlRisk"></h3><p id="domain"></p></div></div><h3 class="sub">⚠ Findings</h3><div id="reasons"></div><div class="box bluebox"><b>Recommendation</b><p>Verify unexpected links through an official source before opening them.</p></div></div></section></div>
+
+{% elif page=="red-flags" %}
+<section class="heading"><div><em>THREAT INTELLIGENCE</em><h1>Phishing Red Flags</h1><p>These are the warning signs used by the analyzer.</p></div></section>
+<div class="flaggrid">{% for r in rules %}<article class="card flag"><b class="num">{{"%02d"|format(loop.index)}}</b><div><h2>{{r[0]}}</h2><p>{{r[1]}}</p><div class="tags">{% for word in r[2][:4] %}<span>{{word}}</span>{% endfor %}</div></div><strong>+{{r[3]}} pts</strong></article>{% endfor %}</div>
+
+{% elif page=="examples" %}
+<section class="heading"><div><em>AWARENESS LAB</em><h1>Phishing Examples</h1><p>Practice identifying common phishing patterns using fictional samples.</p></div></section>
+<div class="examples">{% for ex in examples %}<article class="card"><span class="pill">Sample {{loop.index}}</span><h2>Phishing Scenario {{loop.index}}</h2><pre>{{ex}}</pre><button class="primary full example-load" data-text="{{ex|e}}">Analyze This Example →</button></article>{% endfor %}</div>
+
+{% elif page=="checklist" %}
+<section class="heading"><div><em>AWARENESS</em><h1>Phishing Safety Checklist</h1><p>Pause, check, and verify before responding.</p></div><span class="pill" id="progress">0% complete</span></section>
+<section class="card checklist"><div class="intro">✓ <span><b>Pause. Check. Verify.</b><small>Complete every check before clicking or sharing information.</small></span></div>
+{% for item in ["Check the sender","Check the request","Check the urgency","Inspect the link","Verify independently","Report if suspicious"] %}<label><input type="checkbox" class="check"> <span><b>{{item}}</b><small>Review this point before taking action.</small></span></label>{% endfor %}
+<button id="reset">Reset Checklist</button><p id="checkmsg">Complete all checks before taking action.</p></section>
+
+{% elif page=="safety-tips" %}
+<section class="heading"><div><em>SECURITY AWARENESS</em><h1>Phishing Safety Tips</h1><p>Simple habits that reduce phishing risk.</p></div></section>
+<div class="tips">{% for title,text in [("Slow down","Urgency is commonly used to pressure people into mistakes."),("Never share OTPs","Never disclose one-time passwords or verification codes unexpectedly."),("Inspect links","Check the real destination before opening a link."),("Verify independently","Open the official app or website yourself instead of using a supplied link."),("Watch for threats","Account closure and penalty threats deserve extra scrutiny."),("Report suspicious messages","Reporting helps organizations investigate and protect other users.")] %}<article class="card"><b class="tipnum">{{loop.index}}</b><h2>{{title}}</h2><p>{{text}}</p></article>{% endfor %}</div>
+<section class="card golden"><em>GOLDEN RULE</em><h2>When in doubt, verify through a trusted channel.</h2><p>PhishGuard helps identify patterns, but verification remains important.</p></section>
+{% endif %}
+</main>
+<footer>PhishGuard · DecodeLabs Project 3 <span>Educational phishing awareness tool</span></footer>
+</div>
+</div>
+<script src="{{url_for('static',filename='script.js')}}"></script>
+</body>
+</html>
